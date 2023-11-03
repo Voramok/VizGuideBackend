@@ -1,0 +1,25 @@
+{
+  "profiles": {
+    /*"VizGuideBackend": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:80"
+    },*/
+    "Docker": {
+        "commandName": "Docker",
+        "DockerfileRunArguments": "-l mylabel=value",
+      "environmentVariables": {
+        "ASPNETCORE_URLS": "https://+:443;http://+:80",
+        "ASPNETCORE_HTTPS_PORT": "443"
+      },
+        "httpPort": 80,
+        "useSSL": true,
+        "sslPort": 443
+      }
+    }
+}
+
+
+
