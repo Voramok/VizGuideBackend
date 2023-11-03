@@ -4,10 +4,10 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["VizGuideBackend/VizGuideBackend.csproj", "VizGuideBackend/"]
-RUN dotnet restore "VizGuideBackend/VizGuideBackend.csproj"
+COPY ["VizGuideBackend.csproj", "VizGuideBackend.csproj"]
+RUN dotnet restore "VizGuideBackend.csproj"
 COPY . .
-WORKDIR "/src/VizGuideBackend"
+WORKDIR "/src"
 RUN dotnet build "VizGuideBackend.csproj" -c Release -o /app/build
 
 FROM build AS publish
